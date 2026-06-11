@@ -979,12 +979,12 @@ with st.expander("🔓 Activar análisis de rentabilidad avanzado", expanded=Fal
     col_k4.markdown(f"""
 <div style="background:rgba(16,185,129,0.07);border-left:4px solid #10B981;
             border-radius:6px;padding:14px 18px;height:100%;">
-    <div style="font-size:0.78rem;color:#64748b;margin-bottom:6px;">VPN Solar (tasa {tasa_descuento*100:.1f}%)</div>
-    <div style="font-size:1.5rem;font-weight:700;color:{'#16a34a' if vpn_solar >= 0 else '#dc2626'}">
-        ${vpn_solar:,.0f}
+    <div style="font-size:0.78rem;color:#64748b;margin-bottom:6px;">VPN del Proyecto (tasa {tasa_descuento*100:.1f}%)</div>
+    <div style="font-size:1.5rem;font-weight:700;color:{'#16a34a' if vpn_combo >= 0 else '#dc2626'}">
+        ${vpn_combo:,.0f}
     </div>
     <div style="font-size:0.72rem;color:#94a3b8;margin-top:4px;">
-        {'Proyecto rentable ✓' if vpn_solar >= 0 else 'Revisar supuestos ✗'}
+        {'Solar + BESS · Rentable ✓' if costo_bess > 0 and vpn_combo >= 0 else 'Solo Solar · Rentable ✓' if vpn_combo >= 0 else 'Revisar supuestos ✗'}
     </div>
 </div>""", unsafe_allow_html=True)
 
